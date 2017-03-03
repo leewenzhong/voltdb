@@ -26,6 +26,7 @@ import java.util.Map.Entry;
 import org.voltcore.logging.VoltLogger;
 import org.voltdb.StatementStats.StatsData;
 import org.voltdb.catalog.Procedure;
+import org.voltdb.dtxn.TransactionState;
 
 /**
  * Derivation of StatsSource to expose timing information of procedure invocations.
