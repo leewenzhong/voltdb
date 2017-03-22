@@ -419,7 +419,9 @@ public class ProcedureRunner {
             }
 
             // Record statistics for procedure call.
-            m_statsCollector.endProcedure(abort, error, results, m_txnState);
+            StoredProcedureInvocation invoc = (m_txnState != null ? m_txnState.getInvocation() : null);
+            ParameterSet paramSet = (invoc != null ? invoc.getParams() : null);
+            m_statsCollector.endProcedure(abort, error, results, paramSet);
 
             // don't leave empty handed
             if (results == null) {
